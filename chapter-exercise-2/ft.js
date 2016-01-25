@@ -17,7 +17,7 @@ var memoryBook = false;
 var reproductionRights = false;
 
 // calculates all costs based on staff and adds to a total cost
-function calcStaff () {
+function calcStaff() {
   var num = document.getElementById("photognum");
   var hrs = document.getElementById("photoghrs");
   var distance = document.getElementById("distance");
@@ -31,13 +31,13 @@ function calcStaff () {
 }
 
 // adds/subtracts cost of memory book from total cost
-function toggleMembook () {
+function toggleMembook() {
    (document.getElementById("membook").checked === false) ? totalCost -= 250 : totalCost += 250;
    document.getElementById("estimate").innerHTML = "$" + totalCost;
 }
 
 // adds/subtracts cost of reproduction rights from total cost
-function toggleRights () {
+function toggleRights() {
    (document.getElementById("reprodrights").checked === false) ? totalCost -= 1250 : totalCost += 1250;
    document.getElementById("estimate").innerHTML = "$" + totalCost;
 }
