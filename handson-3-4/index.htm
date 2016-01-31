@@ -67,9 +67,21 @@
       }
     }
 
+<<<<<<< HEAD
     if (document.getElementById("button").addEventListener) {
       document.addEventListener("click", processInput, false);
     }
+=======
+    // add backward compatible event listener to submit button
+    var submitButton = document.getElementById("button");
+    if (submitButton.addEventListener) {
+      submitButton.addEventListener("click", processInput, false);
+    } else if (submitButton.attachEvent) {
+      submitButton.attachEvent("onclick", processInput);
+    }
+
+
+>>>>>>> handson-3-4
   </script>
 
 </body>
