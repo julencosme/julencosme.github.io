@@ -452,7 +452,7 @@ function validateForm(evt) {
   validateDeliveryDate();
   validatePayment();
   validateMessage();
-  validateCreateAccount();
+  //validateCreateAccount();
   validateNumbers();
 
   if (formValidity === true) {
