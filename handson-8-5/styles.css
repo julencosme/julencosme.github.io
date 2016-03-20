@@ -1,6 +1,6 @@
 /*  JavaScript 6th Edition
     Chapter 8
-    Hands-on Project 8-4
+    Hands-on Project 8-5
 
     Filename: styles.css
 */
@@ -101,7 +101,7 @@ ol {
 
 li {
    margin: 0 0 1em 1em;
-   cursor: pointer;
+   curson: pointer;
    clear: both;
 }
 
