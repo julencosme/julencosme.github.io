@@ -6,7 +6,7 @@
  *   Author: Julen D. Cosme
  *   Date:   20 March 2016
 
- *   Filename: styles.js
+ *   Filename: goldrock.js
  */
 
 "use strict";
