@@ -126,7 +126,7 @@ function validateEmail() {
 //      (/\..{2,6}$/.test(emailInput.value) === false)) {
 
     if (emailCheck.test(emailInput.value) === false) {
-      throw "Please provided a valid email address";
+      throw "Please provide a valid email address";
     }
 
     // remove any email error styling and message
