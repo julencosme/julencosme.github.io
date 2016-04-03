@@ -1,95 +1,191 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-   <!--
-      JavaScript 6th Edition
-      Chapter 9
-      Chapter case
+  <!--
+    JavaScript 6th Edition
+    Chapter 9
+    Chapter case
 
-      Eating Well in Season order page
-      Author: 
-      Date:   
+    Eating Well in Season order page
+    Author: Julen D. Cosme
+    Date:   01 April 2016
 
-      Filename: order.htm
-   -->
-   <meta charset="utf-8" />
-   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-   <title>Eating Well in Season - Order</title>
-   <link rel="stylesheet" media="screen and (max-device-width: 999px)" href="styleshh.css" />
-   <link rel="stylesheet" media="screen and (min-device-width: 1000px)" href="styles.css" />
-   <!--[if lt IE 9]>
-      <link rel="stylesheet" href="styles.css" />
-   <![endif]-->
-   <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:400,700' rel='stylesheet' type='text/css'>
-   <script src="modernizr.custom.65897.js"></script>
+    Filename: order.htm
+  -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Eating Well in Season - Order</title>
+  <link rel="stylesheet" media="screen and (max-device-width: 999px)" href="styleshh.css" />
+  <link rel="stylesheet" media="screen and (min-device-width: 1000px)" href="styles.css" />
+  <!--[if lt IE 9]>
+    <link rel="stylesheet" href="styles.css" />
+  <![endif]-->
+  <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:400,700' rel='stylesheet' type='text/css'>
+  <script src="modernizr.custom.65897.js"></script>
 </head>
 
 <body>
-   <div id="container">
-      <header>
-         <hgroup>
-            <h1>
-               <img src="images/ewis.png" alt="" title="" />
-            </h1>
-            <p>Eating Well in Season</p>
-         </hgroup>
-      </header>
-   
-      <nav>
-         <ul>
-            <li><a href="#">About Us</a></li>
-            <li class="currentPage"><a href="#">Sign Up</a></li>
-            <li><a href="#">Calendar</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-   </div>
-      
-   <article>
-      <h2>Sign Up</h2>
+  <div id="container">
+    <header>
+      <hgroup>
+        <h1>
+          <img src="images/ewis.png" alt="" title="" />
+        </h1>
+        <p>Eating Well in Season</p>
+      </hgroup>
+    </header>
 
-      <div class="trail">
-         <div class="otherPage">Your info</div>
-         <div class="currentPage">Your preferences</div>
-      </div>
+    <nav>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li class="currentPage"><a href="#">Sign Up</a></li>
+        <li><a href="#">Calendar</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
 
-      <form action="results.htm">
-         <input type="hidden" id="name" name="name" />
-         <input type="hidden" id="email" name="email" />
-         <input type="hidden" id="phone" name="phone" />
-         <input type="hidden" id="address" name="address" />
-         <input type="hidden" id="city" name="city" />
-         <input type="hidden" id="state" name="state" />
-         <input type="hidden" id="zip" name="zip" />
+  <article>
+    <h2>Sign Up</h2>
 
-         <fieldset class="checks" id="fs1">
-            <legend>Food allergies</legend>
-            <textarea id="allergyDesc" name="allergies"></textarea>
-         </fieldset>
+    <div class="trail">
+      <div class="otherPage">Your info</div>
+      <div class="currentPage">Your preferences</div>
+    </div>
 
-         <fieldset class="checks">
-            <legend>Frequency</legend>
-            <input type="radio" id="weekly" value="Weekly" name="frequency" />
-            <label for="weekly" id="weeklyLabel">Weekly</label>
-            <input type="radio" id="biweekly" value="Biweekly" name="frequency" />
-            <label for="biweekly" id="biweeklyLabel">Biweekly</label>
-            <input type="radio" id="monthly" value="Monthly" name="frequency" />
-            <label for="monthly" id="monthlyLabel">Monthly</label>
-         </fieldset>
-         <fieldset class="checks">            
-            <legend>Package size</legend>
-            <input type="radio" id="taste" value="Taste test" name="size" />
-            <label for="taste" id="tasteLabel">Taste test</label>
-            <input type="radio" id="highlight" value="Healthy highlight" name="size" />
-            <label for="highlight" id="highlightLabel">Healthy Highlight</label>
-            <input type="radio" id="full" value="Full plate" name="size" />
-            <label for="full" id="fullLabel">Full plate</label>
-         </fieldset>
-         <fieldset class="btn">
-            <input type="submit" id="signupBtn" value="Sign Up" />
-         </fieldset>
-      </form>
-   </article>
-   <footer><p>Eating Well in Season &bull; Glover, VT</p></footer>
+    <form action="results.htm">
+      <input type="hidden" id="name" name="name" />
+      <input type="hidden" id="email" name="email" />
+      <input type="hidden" id="phone" name="phone" />
+      <input type="hidden" id="address" name="address" />
+      <input type="hidden" id="city" name="city" />
+      <input type="hidden" id="state" name="state" />
+      <input type="hidden" id="zip" name="zip" />
+
+      <fieldset class="checks" id="fs1">
+        <legend>Food allergies</legend>
+        <textarea id="allergyDesc" name="allergies"></textarea>
+      </fieldset>
+
+      <fieldset class="checks">
+        <legend>Frequency</legend>
+        <input type="radio" id="weekly" value="Weekly" name="frequency" />
+        <label for="weekly" id="weeklyLabel">Weekly</label>
+        <input type="radio" id="biweekly" value="Biweekly" name="frequency" />
+        <label for="biweekly" id="biweeklyLabel">Biweekly</label>
+        <input type="radio" id="monthly" value="Monthly" name="frequency" />
+        <label for="monthly" id="monthlyLabel">Monthly</label>
+      </fieldset>
+      <fieldset class="checks">
+        <legend>Package size</legend>
+        <input type="radio" id="taste" value="Taste test" name="size" />
+        <label for="taste" id="tasteLabel">Taste test</label>
+        <input type="radio" id="highlight" value="Healthy highlight" name="size" />
+        <label for="highlight" id="highlightLabel">Healthy Highlight</label>
+        <input type="radio" id="full" value="Full plate" name="size" />
+        <label for="full" id="fullLabel">Full plate</label>
+      </fieldset>
+      <fieldset class="btn">
+        <input type="submit" id="signupBtn" value="Sign Up" />
+      </fieldset>
+    </form>
+  </article>
+  <footer><p>Eating Well in Season &bull; Glover, VT</p></footer>
+
+  <script>
+
+    /* SCRIPT3.JS */
+
+    // interpret document contents in strict mode
+    "use strict";
+
+
+    // declare global variables
+    var queryArray = [];
+
+
+    // parse and pass query string
+    function populateInfo() {
+      if (location.search) {
+
+        var queryData = location.search;
+        var hiddenInputs = document.querySelectorAll("input[type=hidden]");
+
+        queryData = queryData.substring(1, queryData.length);
+        queryArray = queryData.split("&");
+
+        for (var i = 0; i < queryArray.length; i++){
+          hiddenInputs[i].value = queryArray[i].substring(queryArray[i].lastIndexOf("=") + 1);
+        }
+      }
+    }
+
+
+    // implement persistent cookies
+    function createCookies() {
+
+      // select all pertinent form fields from which to store local data
+      var formFields = document.querySelectorAll("input[type=hidden], input[type=radio], textarea");
+
+      // instantiate today's date re: use for expiresDate
+      var expiresDate = new Date();
+
+      // set expiresDate variable to span one week from today
+      expiresDate.setDate(expiresDate.getDate() + 7);
+
+      // iterate through form data and recode for use in cookies
+      for (var i = 0; i < formFields.length; i++) {
+        var currentValue = decodeURIComponent(formFields[i].value);
+        currentValue = currentValue.replace(/\+/g, " ");
+
+        // specify expire date, i.e.,
+        // add semicolon and space and text for specifying date stored in expiresDate
+        document.cookie = formFields[i].name + "=" + currentValue + "; expires" + expiresDate.toUTCString();
+      }
+    }
+
+
+    // event handler re: submit form
+    function handleSubmit(evt) {
+      if (evt.preventDefault) {
+        evt.preventDefault(); // prevent form from submitting
+      } else {
+        evt.returnValue = false; // prevent form from submitting in IE8
+      }
+      // create cookies based on completed form
+      createCookies();
+      // fire submit event on form
+      document.getElementsByTagName("form")[0].submit();
+    }
+
+
+    // register event listeners
+    function createEventListeners() {
+
+      // register handleSubmit()
+      var form = document.getElementsByTagName("form")[0];
+      if (form.addEventListener) {
+        form.addEventListener("submit", handleSubmit, false)
+      } else if (form.attachEvent) {
+        form.attachEvent("onsubmit", handleSubmit)
+      }
+    }
+
+
+    // assemble scripts
+    function setUpPage() {
+      createEventListeners();
+      populateInfo();
+    }
+
+
+    // run setUpPage() function on window load
+    if (window.addEventListener) {
+      window.addEventListener("load", setUpPage, false);
+    } else if (window.attachEvent) {
+      window.attachEvent("onload", setUpPage);
+    }
+  </script>
+
 </body>
 </html>
