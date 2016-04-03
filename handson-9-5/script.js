@@ -1,6 +1,6 @@
 /*   JavaScript 6th Edition
  *   Chapter 9
- *   Hands-On Project 9-3
+ *   Hands-On Project 9-5
  *
  *   Author: Julen D. Cosme
  *   Date:   03 April 2016
@@ -13,24 +13,47 @@
 "use strict";
 
 
+/* comment out in pursuance of Web Storage
 // extrapolate value from usernameinput
 function processCookie() {
+  var expiresDate = new Date();
   if (document.getElementById("rememberinput").checked) {
-    document.cookie = "username=" + document.getElementById("usernameinput").value;
+    expiresDate.setMinutes(expiresDate.getMinutes() + 2);
+    document.cookie = "username=" + document.getElementById("usernameinput").value + "; expires=" + expiresDate.toUTCString();
   } else {
-    var expiresDate = new Date();
     expiresDate.setDate(expiresDate.getDate() - 7);
     document.cookie = "username=null; expires=" + expiresDate.toUTCString();
   }
 }
+*/
 
-
+/* comment out in pursuance of Web Storage
 // extrapolate data from username field and store to cookie
 function populateInfo() {
   if (document.cookie) {
     var uname = document.cookie;
     uname = uname.substring(uname.lastIndexOf("=") + 1);
     document.getElementById("usernameinput").value = uname;
+  }
+}
+*/
+
+
+function processStorage() {
+  // add if statement to check whether value of #rememberinput is checked
+  if (document.getElementById("rememberinput").checked === true) {
+    // add name-value pair to sessionStorage property
+    sessionStorage.username = document.getElementById("usernameinput").value;
+  }
+}
+
+
+function populateInfo() {
+
+  // add if statement for use of condition sessionStorage.username
+  // run the following statement provided condition true
+  if (sessionStorage.username) {
+    document.getElementById("usernameinput").value = sessionStorage.username;
   }
 }
 
@@ -44,7 +67,8 @@ function handleSubmit(evt) {
     evt.returnValue = false;
   }
   // invoke processCookie()
-  processCookie();
+  // processCookie();
+  processStorage();
   // submit form
   document.getElementsByTagName("form")[0].submit();
 }

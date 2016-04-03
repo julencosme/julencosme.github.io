@@ -1,6 +1,6 @@
 /*   JavaScript 6th Edition
  *   Chapter 9
- *   Hands-On Project 9-3
+ *   Hands-On Project 9-4
  *
  *   Author: Julen D. Cosme
  *   Date:   03 April 2016
@@ -15,10 +15,11 @@
 
 // extrapolate value from usernameinput
 function processCookie() {
+  var expiresDate = new Date();
   if (document.getElementById("rememberinput").checked) {
-    document.cookie = "username=" + document.getElementById("usernameinput").value;
+    expiresDate.setMinutes(expiresDate.getMinutes() + 2);
+    document.cookie = "username=" + document.getElementById("usernameinput").value + "; expires=" + expiresDate.toUTCString();
   } else {
-    var expiresDate = new Date();
     expiresDate.setDate(expiresDate.getDate() - 7);
     document.cookie = "username=null; expires=" + expiresDate.toUTCString();
   }
