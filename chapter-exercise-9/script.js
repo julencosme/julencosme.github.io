@@ -9,8 +9,10 @@
  *   Filename: script.js
  */
 
+
 // interpret document content in strict mode
 "use strict";
+
 
 // delete cookies when order.htm opens
 function clearCookies() {
@@ -30,6 +32,7 @@ function clearCookies() {
     document.cookie = cookieArray[i] + "; expires=" + expiresDate.toUTCString();
   }
 }
+
 
 if (window.addEventListener) {
   window.addEventListener("load", clearCookies, false);
