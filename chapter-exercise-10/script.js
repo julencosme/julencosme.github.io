@@ -14,10 +14,32 @@
 "use strict";
 
 
+// declare global variables for setup page
+var zIndexCounter;
+var pos = [];
+var origin;
+
 // perform setup tasks when page first loads
 function setUpPage() {
   document.querySelector("nav ul li:first-of-type").addEventListener("click", loadSetup, false);
   document.querySelector("nav ul li:last-of-type").addEventListener("click", loadDirections, false);
+
+  // set value of zIndexCounter and add event listeners to furniture objects
+  var movableItems = document.querySelectorAll("#room div");
+  zIndexCounter = movableItems.length + 1;
+  for (var i = 0; i < movableItems.length; i++) {
+    if (movableItems[i].addEventListener) {
+      // add event listener for mouse
+      movableItems[i].addEventListener("mousedown", startDrag, false);
+      // add event listener for touch
+      movableItems[i].addEventListener("touchstart", startDrag, false);
+    } else if (movableItems[i].attachEvent) {
+      // only mouse events supported by IE8
+      movableItems[i].attachEvent("onmousedown", startDrag);
+    }
+
+
+  }
 }
 
 
@@ -39,6 +61,61 @@ function loadDirections(string) {
   document.getElementById("location").style.display = "block";
 }
 
+// add event listeners and move object when user starts dragging
+function startDrag(evt) {
+  // set z-index counter so next selected element is on top of others
+  this.style.zIndex = zIndexCounter;
+
+  // increment z-index counter so next selected element is on top of others
+  zIndexCounter++;
+
+  if (evt.type !== "mousedown") {
+    // add event listeners for touch events
+    this.addEventListener("touchmove", moveDrag, false);
+    this.addEventListener("touchend", removeTouchListener, false);
+  } else {
+    // add event listeners for mouse events
+    this.addEventListener("mousemove", moveDrag, false);
+    this.addEventListener("mouseup", removeDragListener, false);
+  }
+
+  // calculate offset position from origin
+  pos = [this.offsetLeft,this.offsetTop];
+  origin = getCoords(evt);
+}
+
+
+// calculate new location of dragged object
+function moveDrag(evt) {
+  var currentPos = getCoords(evt);
+  var deltaX = currentPos[0] - origin[0];
+  var deltaY = currentPos[1] - origin[1];
+  this.style.left = (pos[0] + deltaX) + "px";
+  this.style.top = (pos[1] + deltaY) + "px";
+}
+
+
+// identify location of object
+function getCoords(evt) {
+  var coords = [];
+  coords[0] = evt.clientX;
+  coords[1] = evt.clientY;
+  return coords;
+}
+
+
+// remove mouse event listeners when dragging ends
+function removeDragListener() {
+  this.removeEventListener("mousemove", moveDrag, false);
+  this.removeEventListener("mouseup", removeDragListener, false);
+}
+
+
+// remove touch event listeners when dragging ends
+function removeTouchListener() {
+  this.removeEventListener("touchmove", moveDrag, false);
+  this.removeEventListener("touchend", removeTouchListener, false);
+}
 
 // run setUpPage() function when page finishes loading
 window.addEventListener("load", setUpPage, false);
