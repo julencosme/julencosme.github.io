@@ -27,8 +27,18 @@ function setUpPage() {
 
   // set value of zIndexCounter and add event listeners to furniture objects
   var movableItems = document.querySelectorAll("#room div");
+
+  // assign z-index value against total movableItems
   zIndexCounter = movableItems.length + 1;
+
+  // implement event listeners for startDrag()
   for (var i = 0; i < movableItems.length; i++) {
+
+    // add prefixed and non-prefixed versions for pointer-item event listeners
+    moveItems[i].addEventListener("mspointerdown", startDrag, false);
+    moveItems[i].addEventListener("mspointerdown", startDrag, false);
+
+    // add event listeners for mouse events else touch events
     if (movableItems[i].addEventListener) {
       // add event listener for mouse
       movableItems[i].addEventListener("mousedown", startDrag, false);
@@ -39,6 +49,13 @@ function setUpPage() {
       movableItems[i].attachEvent("onmousedown", startDrag);
     }
   }
+
+  // add support for pointer events
+
+  // disable IE10+ interface gestures
+  moveableItems[i].style.msTouchAction = "none";
+  moveableItems[i].style.TouchAction = "none";
+
 }
 
 
@@ -70,12 +87,20 @@ function startDrag(evt) {
   zIndexCounter++;
 
   if (evt.type !== "mousedown") {
+
     //prevent touch actions from triggering OS interface gestures
     evt.preventDefault();
 
-    // add event listeners for touch events
+    // add moveDrag() event listeners for touch/pointer events
     this.addEventListener("touchmove", moveDrag, false);
+    this.addEventListener("mspointermove", moveDrag, false);
+    this.addEventListener("pointermove", moveDrag, false);
+
+    // add removeTouchListener() event listener for touch/pointer events
     this.addEventListener("touchend", removeTouchListener, false);
+    this.addEventListener("mspointerup", removeTouchListener, false);
+    this.addEventListener("pointerup", removeTouchListener, false);
+
   } else {
     // add event listeners for mouse events
     this.addEventListener("mousemove", moveDrag, false);
@@ -123,10 +148,16 @@ function removeDragListener() {
 }
 
 
-// remove touch event listeners when dragging ends
+// remove touch/pointer event listeners when dragging ends
 function removeTouchListener() {
+  // re: moveDrag()
   this.removeEventListener("touchmove", moveDrag, false);
+  this.removeEventListener("mspointermove", moveDrag, false);
+  this.removeEventListener("pointermove", moveDrag, false);
+  // re: removeTouchListener()
   this.removeEventListener("touchend", removeTouchListener, false);
+  this.removeEventListener("mspointerup", removeTouchListener, false);
+  this.removeEventListener("pointerup", removeTouchListener, false);
 }
 
 // run setUpPage() function when page finishes loading
