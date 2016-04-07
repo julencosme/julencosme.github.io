@@ -53,8 +53,8 @@ function setUpPage() {
   // add support for pointer events
 
   // disable IE10+ interface gestures
-  moveableItems[i].style.msTouchAction = "none";
-  moveableItems[i].style.TouchAction = "none";
+  movableItems[i].style.msTouchAction = "none";
+  movableItems[i].style.TouchAction = "none";
 
 }
 
