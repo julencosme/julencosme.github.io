@@ -35,8 +35,8 @@ function setUpPage() {
   for (var i = 0; i < movableItems.length; i++) {
 
     // add prefixed and non-prefixed versions for pointer-item event listeners
-    moveItems[i].addEventListener("mspointerdown", startDrag, false);
-    moveItems[i].addEventListener("mspointerdown", startDrag, false);
+    movableItems[i].addEventListener("mspointerdown", startDrag, false);
+    movableItems[i].addEventListener("mspointerdown", startDrag, false);
 
     // add event listeners for mouse events else touch events
     if (movableItems[i].addEventListener) {
@@ -150,15 +150,14 @@ function removeDragListener() {
 
 // remove touch/pointer event listeners when dragging ends
 function removeTouchListener() {
-  // re: moveDrag()
   this.removeEventListener("touchmove", moveDrag, false);
   this.removeEventListener("mspointermove", moveDrag, false);
   this.removeEventListener("pointermove", moveDrag, false);
-  // re: removeTouchListener()
   this.removeEventListener("touchend", removeTouchListener, false);
   this.removeEventListener("mspointerup", removeTouchListener, false);
   this.removeEventListener("pointerup", removeTouchListener, false);
 }
+
 
 // run setUpPage() function when page finishes loading
 window.addEventListener("load", setUpPage, false);
