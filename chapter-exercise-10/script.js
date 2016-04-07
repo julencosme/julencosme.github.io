@@ -19,6 +19,7 @@ var zIndexCounter;
 var pos = [];
 var origin;
 
+
 // perform setup tasks when page first loads
 function setUpPage() {
   document.querySelector("nav ul li:first-of-type").addEventListener("click", loadSetup, false);
@@ -37,8 +38,6 @@ function setUpPage() {
       // only mouse events supported by IE8
       movableItems[i].attachEvent("onmousedown", startDrag);
     }
-
-
   }
 }
 
@@ -61,6 +60,7 @@ function loadDirections(string) {
   document.getElementById("location").style.display = "block";
 }
 
+
 // add event listeners and move object when user starts dragging
 function startDrag(evt) {
   // set z-index counter so next selected element is on top of others
@@ -70,6 +70,9 @@ function startDrag(evt) {
   zIndexCounter++;
 
   if (evt.type !== "mousedown") {
+    //prevent touch actions from triggering OS interface gestures
+    evt.preventDefault();
+
     // add event listeners for touch events
     this.addEventListener("touchmove", moveDrag, false);
     this.addEventListener("touchend", removeTouchListener, false);
@@ -98,8 +101,17 @@ function moveDrag(evt) {
 // identify location of object
 function getCoords(evt) {
   var coords = [];
-  coords[0] = evt.clientX;
-  coords[1] = evt.clientY;
+
+  // determine if evt parameter has targetTouches property
+  // determine if targetTouches property has length value
+  if (evt.targetTouches && evt.targetTouches.length) {
+    var thisTouch = evt.targetTouches[0];
+    coords[0] = thisTouch.clientX;
+    coords[1] = thisTouch.clientY;
+  } else {
+    coords[0] = evt.clientX;
+    coords[1] = evt.clientY;
+  }
   return coords;
 }
 
