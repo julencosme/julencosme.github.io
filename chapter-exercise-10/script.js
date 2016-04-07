@@ -55,7 +55,7 @@ function setUpPage() {
   // disable IE10+ interface gestures
   // test for changes
   movableItems[i].style.msTouchAction = "none";
-  movableItems[i].style.TouchAction = "none";
+  movableItems[i].style.touchAction = "none";
 
 }
 
