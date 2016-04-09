@@ -34,6 +34,11 @@ function setUpPage() {
   // implement event listeners for startDrag()
   for (var i = 0; i < movableItems.length; i++) {
 
+    // add support for pointer events
+    // disable IE10+ interface gestures
+    movableItems[i].style.msTouchAction = "none";
+    movableItems[i].style.touchAction = "none";
+
     // add prefixed and non-prefixed versions for pointer-item event listeners
     movableItems[i].addEventListener("mspointerdown", startDrag, false);
     movableItems[i].addEventListener("mspointerdown", startDrag, false);
@@ -49,14 +54,6 @@ function setUpPage() {
       movableItems[i].attachEvent("onmousedown", startDrag);
     }
   }
-
-  // add support for pointer events
-
-  // disable IE10+ interface gestures
-  // test for changes
-  movableItems[i].style.msTouchAction = "none";
-  movableItems[i].style.touchAction = "none";
-
 }
 
 
@@ -76,6 +73,27 @@ function loadDirections(string) {
   document.querySelector("nav ul li:last-of-type").className = "current";
   document.getElementById("setup").style.display = "none";
   document.getElementById("location").style.display = "block";
+  geoTest();
+}
+
+
+// add request for geolocation information to app
+function geoTest() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(createDirections, fail, {timeout: 10000});
+  } else {
+    fail();
+  }
+}
+
+
+// call when geolocation request succeeds
+function createDirections(position) {
+  console.log("Longitude: " + position.coords.longitude);
+  console.log("Latitude: " + position.coords.latitude);
+}
+function fail() {
+  console.log("Geolocation information not available or not authorized.");
 }
 
 
