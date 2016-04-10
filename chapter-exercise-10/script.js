@@ -97,20 +97,24 @@ function createDirections(position) {
   // kill waitForUser() if createDirections called successfully
   clearTimeout(waitForUser);
 
-
-  // use Google Maps API to display map centered on user location
-
-  // store user latitude and longitude
-  var currPosLat = position.coords.latitude;
-  var currPosLat = position.coords.longitude;
-  var mapOptions = {
-    center: new google.maps.LatLng(currPosLat, currPosLng),
-    zoom: 12
-  };
-
   // log device lat/long coordinates
   // console.log("Longitude: " + position.coords.longitude);
   // console.log("Latitude: " + position.coords.latitude);
+
+  // use Google Maps API to display map centered on user location
+  // store user latitude and longitude
+  var currPosLat = position.coords.latitude;
+  var currPosLng = position.coords.longitude;
+  var mapOptions = {
+
+    // center maps on device's geolocation
+    // center: new google.maps.LatLng(currPosLat, currPosLng),
+
+    // center map on downtown Columbus, Ohio
+    center: new google.maps.LatLng(39.96118, -82.99879),
+    zoom: 12
+  };
+
 
   // initialize map instance
   var map = new google.maps.Map(document.getElementById("map"), mapOptions);
