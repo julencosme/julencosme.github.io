@@ -80,7 +80,7 @@ function loadDirections(string) {
   if (typeof google !== 'object') {
     var script = document.createElement("script");
     // include callback invoking geoTest(), to load only after library has loaded
-    script.src = "https://maps.googleapis.com/maps/api/js? v=3.exp&sensor=true&callback=geoTest";
+    script.src = "https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true&callback=geoTest";
     document.body.appendChild(script);
   }
 }
