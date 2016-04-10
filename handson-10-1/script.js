@@ -64,7 +64,7 @@ function getCoords(event) {
   var coords = [];
 
   if (event.targetTouches && event.targetTouches.length) {
-    var thisTouch = event.tartgetTouches[0];
+    var thisTouch = event.targetTouches[0];
     coords[0] = thisTouch.clientX;
     coords[1] = thisTouch.clientY;
   } else {

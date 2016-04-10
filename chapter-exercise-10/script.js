@@ -41,7 +41,7 @@ function setUpPage() {
 
     // add prefixed and non-prefixed versions for pointer-item event listeners
     movableItems[i].addEventListener("mspointerdown", startDrag, false);
-    movableItems[i].addEventListener("mspointerdown", startDrag, false);
+    movableItems[i].addEventListener("pointerdown", startDrag, false);
 
     // add event listeners for mouse events else touch events
     if (movableItems[i].addEventListener) {
