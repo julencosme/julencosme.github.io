@@ -73,7 +73,16 @@ function loadDirections(string) {
   document.querySelector("nav ul li:last-of-type").className = "current";
   document.getElementById("setup").style.display = "none";
   document.getElementById("location").style.display = "block";
-  geoTest();
+
+//   geoTest();
+
+  // to minimize data use, download map only if needed and not already downloaded
+  if (typeof google !== 'object') {
+    var script = document.createElement("script");
+    // include callback invoking geoTest(), to load only after library has loaded
+    script.src = "https://maps.googleapis.com/maps/api/js? v=3.exp&sensor=true&callback=geoTest";
+    document.body.appendChild(script);
+  }
 }
 
 
