@@ -18,7 +18,7 @@
 var zIndexCounter;
 var pos = [];
 var origin;
-
+var waitForUser;
 
 // perform setup tasks when page first loads
 function setUpPage() {
@@ -79,6 +79,10 @@ function loadDirections(string) {
 
 // add request for geolocation information to app
 function geoTest() {
+
+  // handle non-response re: location query
+  waitForUser = setTimeout(fail, 10000);
+
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(createDirections, fail, {timeout: 10000});
   } else {
@@ -89,11 +93,34 @@ function geoTest() {
 
 // call when geolocation request succeeds
 function createDirections(position) {
-  console.log("Longitude: " + position.coords.longitude);
-  console.log("Latitude: " + position.coords.latitude);
+
+  // kill waitForUser() if createDirections called successfully
+  clearTimeout(waitForUser);
+
+
+  // use Google Maps API to display map centered on user location
+
+  // store user latitude and longitude
+  var currPosLat = position.coords.latitude;
+  var currPosLat = position.coords.longitude;
+  var mapOptions = {
+    center: new google.maps.LatLng(currPosLat, currPosLng),
+    zoom: 12
+  };
+
+  // log device lat/long coordinates
+  // console.log("Longitude: " + position.coords.longitude);
+  // console.log("Latitude: " + position.coords.latitude);
+
+  // initialize map instance
+  var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 }
+
+
 function fail() {
-  console.log("Geolocation information not available or not authorized.");
+  // console.log("Geolocation information not available or not authorized.");
+
+  document.getElementById("map").innerHTML = "Unable to access your location.";
 }
 
 
