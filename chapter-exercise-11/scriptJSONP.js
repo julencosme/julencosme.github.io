@@ -3,8 +3,8 @@
     Chapter case
 
     Whole Spectrum Energy Solutions
-    Author:
-    Date:
+    Author: Julen D. Cosme
+    Date:   12 April 2016
 
     Filename: script.js
 */

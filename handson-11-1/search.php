@@ -6,7 +6,7 @@
 
 */
 
-$acctKey = 'accountkey';
+$acctKey = '5tVC+vsu+bnqZq53KGLyKDezAx303YJT+zjt3wFHKjk';
 
 $rootUri = 'https://api.datamarket.azure.com/Bing/Search';
 
@@ -20,7 +20,7 @@ $serviceOp = "Web";
 
 // Construct the full URI for the query.
 
-$requestUri = "$rootUri/$serviceOp?\$format=json&Query=$query"; 
+$requestUri = "$rootUri/$serviceOp?\$format=json&Query=$query";
 
 // Encode the credentials and create the stream context.
 
@@ -44,10 +44,10 @@ $context = stream_context_create($data);
 
 // Get the response from Bing.
 
-$response = file_get_contents($requestUri, 0, $context); 
+$response = file_get_contents($requestUri, 0, $context);
 
 header("Content-Type: text/json");
 
 echo $response;
 
-?> 
+?>
