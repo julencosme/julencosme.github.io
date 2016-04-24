@@ -36,4 +36,3 @@ function hide(event) {
 // 2. use hover method to specify code to fire in response to hover event
 // 3. function takes two (2) arguments, referencing event handlers above (i.e, display, hide)
 $("ul.mainmenu li").hover(display,hide);
-
