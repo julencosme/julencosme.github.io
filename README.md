@@ -43,7 +43,7 @@ Which will initialize your development server.
 
 ## Development workflow
 
-To reiterate, here's an overview of your typical workflow:
+Here's an overview of your typical workflow:
 
 - Navigate to your project's root directory:
 
@@ -70,7 +70,7 @@ $ git add .
 $ git commit -m "My commit message regarding changes I made"
 ```
 
-And then push:
+- And then push:
 
 ```bash
 $ git push -u origin my-new-branch
