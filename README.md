@@ -65,10 +65,78 @@ A few notes:
 
 To deploy:
 
+- Navigate to your project's root directory:
+
+```bash
+$ cd ~/Github/julencosme.github.io
+```
+
 - Pull the latest version of `develop`:
 
 ```bash
 $ git pull origin develop
+```
+
+- Build from the latest code:
+
+```bash
+$ npm run build
+```
+
+- Stage your files and specify a commit message:
+
+```bash
+$ git add build && git commit -m "Add your commit message"
+```
+
+- Propagate changes up to `master`:
+
+```bash
+$ git subtree push --prefix build origin master
+```
+
+## Development workflow
+
+To reiterate, here's an overview of your typical workflow:
+
+- Navigate to your project's root directory:
+
+```bash
+$ cd ~/Github/julencosme.github.io
+```
+
+- Pull from `develop`, as with:
+
+```bash
+$ git pull origin develop
+```
+
+- Branch from `develop`, as with:
+
+```bash
+$ git checkout -b my-new-branch
+```
+
+- Make changes; commit when you see fit, as with:
+
+```bash
+$ git add .
+$ git commit -m "My commit message regarding changes I made"
+```
+
+- Open a pull request via GitHub, requesting merge into `develop`
+- Merge pull request via GitHub
+- Switch back to `develop` and pull, as with:
+
+```bash
+$ git checkout develop
+$ git pull origin develop
+```
+
+- Make a build:
+
+```bash
+$ npm run build
 ```
 
 - Stage your files and specify a commit message:
