@@ -41,60 +41,6 @@ Which will initialize your development server.
 
 - Assets such as images, PDFs, &c. should be stored in the `source/images` directory.
 
-## Build
-
-To create a bundled, optimized version of your site:
-
-```bash
-$ cd ~/Github/julencosme.github.io
-$ npm run build
-```
-
-Accordingly, you will generate a production build of the site in the `build` directory of the project's root. This is a static build, so it can be opened directly in a browser.
-
-## Deploy
-
-The deployment of your site will propagate your latest build as a live version on GitHub Pages.
-
-A few notes:
-
-- GitHub Pages for personal websites requires that our site exist on the `master` branch
-- Because we are developing in a `source` directory, and because we are building to a `build` directory, and because GitHub Pages require that `index.html` reside in the project's root directory, our deployment procedure requires an extra step.
-- Our source of truth will be the `develop` branch.
-- We will reserve `master` for deployment of our live site.
-
-To deploy:
-
-- Navigate to your project's root directory:
-
-```bash
-$ cd ~/Github/julencosme.github.io
-```
-
-- Pull the latest version of `develop`:
-
-```bash
-$ git pull origin develop
-```
-
-- Build from the latest code:
-
-```bash
-$ npm run build
-```
-
-- Stage your files and specify a commit message:
-
-```bash
-$ git add build && git commit -m "Add your commit message"
-```
-
-- Propagate changes up to `master`:
-
-```bash
-$ git subtree push --prefix build origin master
-```
-
 ## Development workflow
 
 To reiterate, here's an overview of your typical workflow:
@@ -124,32 +70,50 @@ $ git add .
 $ git commit -m "My commit message regarding changes I made"
 ```
 
+And then push:
+
+```bash
+$ git push -u origin my-new-branch
+```
+
 - Open a pull request via GitHub, requesting merge into `develop`
 - Merge pull request via GitHub
-- Switch back to `develop` and pull, as with:
+- In your local environment, switch back to `develop` and pull, as with:
 
 ```bash
 $ git checkout develop
 $ git pull origin develop
 ```
 
-- Make a build:
+- Our goal, now, is to create a bundled, optimized version of your site.
+- Accordingly, we'll generate a production build of the site in the `build` directory of the project's root. This is a static build; in theory, it could be opened directly in the browser.
 
 ```bash
 $ npm run build
 ```
 
-- Stage your files and specify a commit message:
+As it stands, our objective is to occasion a deployment. The deployment of our site will propagate the latest build as a live version on GitHub Pages.
+
+A few notes:
+
+- GitHub Pages for personal websites requires that our site exist on the `master` branch
+- Because we are developing in a `source` directory, and because we have built to a `build` directory, and because GitHub Pages require that `index.html` reside in the project's root directory, our deployment procedure requires an extra step.
+- Our source of truth is the `develop` branch. This is the branch from which we will work.
+- We are reserving the `master` branch for deployment of our live site (i.e., we'll never work from `master`).
+
+To start, let's stage our files and specify a commit message:
 
 ```bash
 $ git add build && git commit -m "Add your commit message"
 ```
 
-- Propagate changes up to `master`:
+- Finally, propagate changes up to `master`:
 
 ```bash
 $ git subtree push --prefix build origin master
 ```
+
+Your changes should now appear on https://julencosme.github.io/. Rejoice!
 
 ## Notes
 
