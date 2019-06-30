@@ -1,0 +1,88 @@
+// h1 => Montserrat, Extra Bold, 16 pt / 19.2 pt, RGB(255, 255, 255)
+// h2 => Montserrat, Extra Bold, 14 pt / 16.8 pt, RGB(249, 0, 79)
+// h3 => Montserrat, Extra Bold, 12 pt / 14.4 pt, RGB(51, 47, 62)
+// body => Lato, Light, 10pt / 12 pt, RGB(51, 47, 62)
+
+// Colors
+$pink: rgb(249, 0, 79);
+$white: rgb(255, 255, 255);
+$charcoal: rgb(51, 47, 62);
+
+//fonts
+$heading-font: 'Montserrat', sans-serif;
+$body-font: 'Lato', sans-serif;
+
+h1,
+h2,
+h3 {
+  font-family: $heading-font;
+}
+
+p {
+  font-family: $body-font;
+  font-size: 14px;
+  line-height: 1.75em;
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+  color: $pink;
+}
+
+html,
+body {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.test-class {
+  text-align: center;
+  color: $pink;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.page-main {
+  background: pink;
+  flex: 3;
+}
+
+.page-sidebar {
+  background: blue;
+  flex: 1;
+}
+
+.full-screen-container {
+  height: 100%;
+  width: 100%;
+  background: green;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  // display: flex;
+  // flex: 1;
+  // flex-direction: row;
+}
+
+.slide {
+  display: flex;
+  flex: 1;
+}
+
+.slide-1 {
+  background: red;
+  left: 0;
+}
+.slide-2 {
+  background: pink;
+  left: 100%;
+}

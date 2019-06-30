@@ -7,5 +7,5 @@ gulp.task('images', () => {
   gulp
     .src(['source/images/**/*.{jpg,jpeg,png,gif}'], {base: 'source/images'})
     .pipe(ifElse(argv.compress, () => imagemin()))
-    .pipe(gulp.dest('docs/images'));
+    .pipe(gulp.dest('build/images'));
 });
