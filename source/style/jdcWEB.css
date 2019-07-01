@@ -1,30 +1,38 @@
 body {
   background-color: black;
   font-family: 'Permanent Maker', sans-serif;
+  margin: 25px;
 }
 
 h1 {
   color: burlywood;
   font-family: 'Permanent Marker', sans-serif;
   font-size: 65px;
+  margin: 25px;
 }
 p {
   color: burlywood;
   font-family: 'Permanent Marker', sans-serif;
+  margin: 25px;
 }
 
 h2 {
   color: burlywood;
   font-family: 'Special Elite', sans-serif;
   font-size: 25px;
+  margin: 25px;
 }
 
 a {
   color: burlywood;
   font-family: 'Permanent Marker', sans-serif;
   font-size: 35px;
+  margin: 25px;
 }
 
+div {
+  margin: 25px;
+}
 /*
 <link href="https://fonts.googleapis.com/css?family=Anton|Cormorant+SC|Khula|Mallanna|Shrikhand&display=swap" rel="stylesheet">
 
