@@ -2,7 +2,6 @@
 import './more-javascript/more.js';
 // import 'normalize.css'; // Note this
 // import './style/style.scss';
-// import './style/style.css';
 // import './style/jdcWEB.css';
 
 const saySomething = something => {

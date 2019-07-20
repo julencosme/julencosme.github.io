@@ -1,3 +1,4 @@
+/* home page*/
 body {
   background-color: black;
   font-family: 'Permanent Maker', sans-serif;
@@ -8,7 +9,7 @@ h1 {
   color: burlywood;
   font-family: 'Permanent Marker', sans-serif;
   font-size: 65px;
-  margin: 25px;
+  margin: 35px;
 }
 p {
   color: burlywood;
@@ -33,20 +34,28 @@ a {
 div {
   margin: 25px;
 }
+
 /*
-<link href="https://fonts.googleapis.com/css?family=Anton|Cormorant+SC|Khula|Mallanna|Shrikhand&display=swap" rel="stylesheet">
-
-font-family: 'Anton', sans-serif; NO
-font-family: 'Khula', sans-serif; NO
-font-family: 'Shrikhand', cursive; YES
-font-family: 'Cormorant SC', serif; NO
-font-family: 'Mallanna', sans-serif; PERHAPS
-
-<link href="https://fonts.googleapis.com/css?family=Fugaz+One|Kanit|Special+Elite&display=swap" rel="stylesheet">
-
-font-family: 'Kanit', sans-serif; YES
-font-family: 'Special Elite', cursive; PERHAPS
-font-family: 'Fugaz One', cursive;
+I have copied link to this CSS reference page
+Need to make classes as to apply to all my HTML pages
 
 
-*/
+
+
+About Me Page
+.aboutMe {
+  body: background-color: salmon;
+    
+
+    p {
+      color: saddlebrown;
+      font-family: 'Permanent Marker', cursive;
+      font-size: 27px;
+
+    }
+
+    div {
+      margin: 125px;
+    }
+}
+/*
