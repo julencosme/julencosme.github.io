@@ -1,88 +1,171 @@
-// h1 => Montserrat, Extra Bold, 16 pt / 19.2 pt, RGB(255, 255, 255)
-// h2 => Montserrat, Extra Bold, 14 pt / 16.8 pt, RGB(249, 0, 79)
-// h3 => Montserrat, Extra Bold, 12 pt / 14.4 pt, RGB(51, 47, 62)
-// body => Lato, Light, 10pt / 12 pt, RGB(51, 47, 62)
+// Colors:
+$black: black;
 
-// Colors
-$pink: rgb(249, 0, 79);
-$white: rgb(255, 255, 255);
-$charcoal: rgb(51, 47, 62);
+// Fonts:
+$heading-font: 'Permanent Marker', cursive;
+$monospace-font: 'Special Elite', Courier, monospace;
+$crmBody-font: 'Kanit', Courier, monospace;
+// $sans-serif-font:
 
-//fonts
-$heading-font: 'Montserrat', sans-serif;
-$body-font: 'Lato', sans-serif;
-
-h1,
-h2,
-h3 {
-  font-family: $heading-font;
+html {
+  font-size: 62.5%;
 }
 
-p {
-  font-family: $body-font;
-  font-size: 14px;
-  line-height: 1.75em;
-}
+// Spacing:
+$spacing-tiny: 0.8rem;
+$spacing-small: 1.6rem;
+$spacing-base: 2.4rem;
+$spacing-large: 4.8rem;
+$spacing-huge: 6.4rem;
 
-a,
-a:visited,
-a:hover,
-a:active {
-  color: $pink;
-}
-
-html,
 body {
-  display: flex;
-  height: 100%;
-  width: 100%;
+  font-size: 1.4rem; // 14px
 }
 
-.test-class {
-  text-align: center;
-  color: $pink;
+// h1 {
+//   font-size: 2.4rem; // 24px
+// }
+
+/* home page*/
+body.home-page {
+  background-color: $black;
+  font-family: $heading-font;
+  margin: $spacing-base;
 }
 
-.page-container {
-  display: flex;
-  flex-direction: row;
-  height: 100%;
-  justify-content: space-between;
+.home-page {
+  h1 {
+    color: burlywood;
+    font-family: $heading-font;
+    font-size: 65px;
+    margin-bottom: $spacing-base;
+  }
+  p {
+    color: burlywood;
+    font-family: $heading-font;
+    // margin: $spacing-base;
+  }
+
+  h2 {
+    color: burlywood;
+    font-family: $monospace-font;
+    font-size: $spacing-base;
+    margin: $spacing-base;
+  }
+
+  a {
+    color: burlywood;
+    font-family: $heading-font;
+    font-size: 35px;
+    margin: $spacing-base;
+  }
+
+  div {
+    margin: $spacing-base;
+  }
 }
 
-.page-main {
-  background: pink;
-  flex: 3;
+.text-container {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: $spacing-base;
 }
 
-.page-sidebar {
-  background: blue;
-  flex: 1;
+// I have copied link to this CSS reference page
+// Need to make classes as to apply to all my HTML pages
+
+// About Me Page
+// .aboutMe {
+//   body: background-color: salmon;
+//     p {
+//       color: saddlebrown;
+//       font-family: 'Permanent Marker', cursive;
+//       font-size: 27px;
+//     }
+//     div {
+//       margin: 1$spacing-base;
+//     }
+// }
+
+body.about-me-page {
+  background-color: salmon;
 }
 
-.full-screen-container {
-  height: 100%;
-  width: 100%;
-  background: green;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  // display: flex;
-  // flex: 1;
-  // flex-direction: row;
+.about-me-page {
+  h1 {
+    color: darkolivegreen;
+    font-family: $heading-font;
+    font-size: 40px;
+    margin-bottom: $spacing-base;
+  }
+
+  p {
+    color: saddlebrown;
+    font-family: $heading-font;
+    font-size: 25px;
+  }
 }
 
-.slide {
-  display: flex;
-  flex: 1;
+body.contact-page {
+  background-color: $black;
+  margin: 50px;
 }
 
-.slide-1 {
-  background: red;
-  left: 0;
+.contact-page {
+  h1 {
+    font-size: 40px;
+    font-family: $heading-font;
+    color: burlywood;
+    margin: 50px;
+  }
+
+  p {
+    font-size: 25px;
+    font-family: $monospace-font;
+    color: burlywood;
+    margin: 50px;
+  }
 }
-.slide-2 {
-  background: pink;
-  left: 100%;
+
+.crm-consult-page {
+  body {
+    background-color: salmon;
+  }
+
+  h1 {
+    color: darkolivegreen;
+    font-family: 'Permanent Marker', cursive;
+  }
+
+  p {
+    color: saddlebrown;
+    font-family: $crmBody-font;
+    font-size: 20px;
+  }
+  div {
+    margin: 140px;
+  }
+}
+
+.flyers-page {
+  h1 {
+    color: darkolivegreen;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 35px;
+    margin: 65px;
+  }
+
+  body {
+    background-color: salmon;
+  }
+
+  a {
+    color: saddlebrown;
+    font-family: 'Special Elite', cursive;
+    font-size: 22px;
+  }
+
+  div {
+    margin: 75px;
+  }
 }
