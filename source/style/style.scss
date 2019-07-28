@@ -1,0 +1,272 @@
+// Colors:
+$black: black;
+
+// Fonts:
+$heading-font: 'Permanent Marker', cursive;
+$monospace-font: 'Special Elite', Courier, monospace;
+$body-font: 'Kanit', Courier, monospace;
+
+html {
+  font-size: 62.5%;
+}
+
+// Spacing:
+$spacing-tiny: 0.8rem;
+$spacing-small: 1.6rem;
+$spacing-base: 2.4rem;
+$spacing-large: 4.8rem;
+$spacing-huge: 6.4rem;
+
+body {
+  font-size: 1.4rem; // 14px
+}
+
+.give-me-a-break {
+  line-height: $spacing-base;
+}
+
+/* home page*/
+body.home-page {
+  background-color: $black;
+  font-family: $heading-font;
+  margin: $spacing-base;
+}
+
+.home-page {
+  h1 {
+    color: burlywood;
+    font-family: $heading-font;
+    font-size: $spacing-huge;
+    margin-bottom: $spacing-base;
+    padding: 11px;
+  }
+  p {
+    color: burlywood;
+    font-family: $heading-font;
+    padding: $spacing-small;
+  }
+
+  h2 {
+    color: burlywood;
+    font-family: $monospace-font;
+    font-size: $spacing-base;
+    margin: $spacing-base;
+  }
+
+  a {
+    color: burlywood;
+    font-family: $heading-font;
+    font-size: 35px;
+    margin: $spacing-base;
+  }
+
+  div {
+    margin: $spacing-base;
+  }
+}
+
+.text-container {
+  margin: 0 auto;
+  max-width: 80rem;
+  padding: $spacing-base;
+}
+
+body.about-me-page {
+  background-color: salmon;
+}
+
+.about-me-page {
+  h1 {
+    color: darkolivegreen;
+    font-family: $heading-font;
+    font-size: 40px;
+    margin-bottom: $spacing-base;
+  }
+
+  p {
+    color: saddlebrown;
+    font-family: $heading-font;
+    font-size: 25px;
+  }
+}
+
+// /*All classes and sass code for archive DO NOT work!
+
+body.archive-page {
+  background-color: salmon;
+}
+.archive-page {
+  // h1 {
+  //   color: darkolivegreen;
+  //   font-family: 'Permanent Marker', cursive;
+  //   margin: 45px;
+  // }
+
+  // h2 {
+  //   color: saddlebrown;
+  //   font-family: 'Special Elite', cursive;
+  //   margin: 55px;
+  // }
+
+  h1 {
+    color: darkolivegreen;
+    font-family: 'Permanent Marker', cursive;
+    margin: 45px;
+  }
+
+  h2 {
+    color: saddlebrown;
+    font-family: 'Permanent Marker', cursive;
+    margin: 55px;
+  }
+
+  .image-gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 $spacing-small;
+  }
+
+  .image-gallery-item {
+    min-width: 0;
+    margin: $spacing-tiny;
+    img {
+      width: 320px;
+      max-width: 100%;
+      max-height: 425px;
+    }
+  }
+}
+
+body.contact-page {
+  background-color: $black;
+  margin: 50px;
+}
+
+.contact-page {
+  h1 {
+    font-size: 40px;
+    font-family: $heading-font;
+    color: burlywood;
+    margin: 50px;
+  }
+
+  h2 {
+    font-size: 25px;
+    font-family: $monospace-font;
+    color: burlywood;
+    margin: 50px;
+    padding: 10px;
+  }
+  h3 {
+    font-size: 25px;
+    font-family: $monospace-font;
+    color: burlywood;
+    margin: 50px;
+    padding: 10px;
+  }
+  p {
+    font-size: 25px;
+    font-family: $monospace-font;
+    color: burlywood;
+    margin: 50px;
+    padding: 165px;
+  }
+}
+
+body.crm-blog-page {
+  background-color: salmon;
+}
+.crm-blog-page {
+  h1 {
+    color: darkolivegreen;
+    font-size: 33px;
+    font-family: 'Permanent Marker', cursive;
+    margin: $spacing-base;
+  }
+  h2 {
+    color: darkolivegreen;
+    font-size: 25px;
+    font-family: 'Permanent Marker', cursive;
+    margin: $spacing-base;
+    padding-top: 35px;
+  }
+
+  p {
+    color: saddlebrown;
+    font-family: $body-font;
+    font-size: 19px;
+    margin: $spacing-base;
+  }
+}
+
+.material-separation {
+  padding-bottom: 100px;
+}
+
+body.flyers-page {
+  background-color: salmon;
+}
+.flyers-page {
+  h1 {
+    color: darkolivegreen;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 33px;
+    margin: 55px;
+  }
+
+  a {
+    color: saddlebrown;
+    font-family: 'Special Elite', cursive;
+    font-size: 22px;
+    margin: 60px;
+  }
+}
+
+body.portfolio-page {
+  background-color: burlywood;
+}
+.portfolio-page {
+  h1 {
+    color: black;
+    font-family: 'Permanent Marker', Courier, monospace;
+    font-size: 40px;
+  }
+
+  a {
+    color: black;
+    font-family: 'Special Elite', Courier, monospace;
+    font-size: 21px;
+  }
+
+  div {
+    margin: 60px;
+  }
+}
+
+body.code-sample-page {
+  background-color: burlywood;
+}
+.code-sample-page {
+  h1 {
+    color: black;
+    font-family: 'Permanent Marker', Courier, monospace;
+    font-size: 40px;
+  }
+
+  h2 {
+    color: darkolivegreen;
+    font-family: 'Permanent Marker', Courier, monospace;
+    font-size: 30px;
+  }
+
+  a {
+    color: black;
+    font-family: 'Special Elite', Courier, monospace;
+    font-size: 21px;
+  }
+
+  div {
+    margin: 60px;
+  }
+}
