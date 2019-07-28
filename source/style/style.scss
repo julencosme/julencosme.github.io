@@ -96,18 +96,6 @@ body.archive-page {
   background-color: salmon;
 }
 .archive-page {
-  // h1 {
-  //   color: darkolivegreen;
-  //   font-family: 'Permanent Marker', cursive;
-  //   margin: 45px;
-  // }
-
-  // h2 {
-  //   color: saddlebrown;
-  //   font-family: 'Special Elite', cursive;
-  //   margin: 55px;
-  // }
-
   h1 {
     color: darkolivegreen;
     font-family: 'Permanent Marker', cursive;
@@ -140,37 +128,31 @@ body.archive-page {
 
 body.contact-page {
   background-color: $black;
-  margin: 50px;
+  margin: $spacing-base 0 0;
 }
 
 .contact-page {
   h1 {
-    font-size: 40px;
+    font-size: $spacing-large;
     font-family: $heading-font;
     color: burlywood;
-    margin: 50px;
+    margin: 0 $spacing-large;
   }
 
   h2 {
-    font-size: 25px;
+    font-size: $spacing-base;
     font-family: $monospace-font;
     color: burlywood;
-    margin: 50px;
+    margin: $spacing-large;
     padding: 10px;
   }
-  h3 {
-    font-size: 25px;
-    font-family: $monospace-font;
-    color: burlywood;
-    margin: 50px;
-    padding: 10px;
-  }
+
   p {
-    font-size: 25px;
-    font-family: $monospace-font;
     color: burlywood;
-    margin: 50px;
-    padding: 165px;
+    font-family: $monospace-font;
+    font-size: $spacing-base;
+    margin: ($spacing-huge * 2) $spacing-large 0;
+    padding: $spacing-small;
   }
 }
 
