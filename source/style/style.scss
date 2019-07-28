@@ -4,8 +4,7 @@ $black: black;
 // Fonts:
 $heading-font: 'Permanent Marker', cursive;
 $monospace-font: 'Special Elite', Courier, monospace;
-$crmBody-font: 'Kanit', Courier, monospace;
-// $sans-serif-font:
+$body-font: 'Kanit', Courier, monospace;
 
 html {
   font-size: 62.5%;
@@ -22,12 +21,8 @@ body {
   font-size: 1.4rem; // 14px
 }
 
-// h1 {
-//   font-size: 2.4rem; // 24px
-// }
-
 .give-me-a-break {
-  line-height: 25px;
+  line-height: $spacing-base;
 }
 
 /* home page*/
@@ -41,15 +36,14 @@ body.home-page {
   h1 {
     color: burlywood;
     font-family: $heading-font;
-    font-size: 65px;
+    font-size: $spacing-huge;
     margin-bottom: $spacing-base;
     padding: 11px;
   }
   p {
     color: burlywood;
     font-family: $heading-font;
-    padding: 17px;
-    // margin: $spacing-base;
+    padding: $spacing-small;
   }
 
   h2 {
@@ -73,7 +67,7 @@ body.home-page {
 
 .text-container {
   margin: 0 auto;
-  max-width: 800px;
+  max-width: 80rem;
   padding: $spacing-base;
 }
 
@@ -200,7 +194,7 @@ body.crm-blog-page {
 
   p {
     color: saddlebrown;
-    font-family: $crmBody-font;
+    font-family: $body-font;
     font-size: 19px;
     margin: $spacing-base;
   }
