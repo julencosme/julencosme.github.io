@@ -28,7 +28,7 @@
     "start": "webpack-dev-server --mode=development",
     "prebuild": "rm -rf build",
     "build": "webpack -p",
-    "postbuild": "gulp images --compress"
+    "postbuild": "gulp images --compress; mkdir build/pdfs; cp -a source/pdfs/ ./build/pdfs"
   },
   "devDependencies": {
     "autoprefixer": "^8.5.0",
