@@ -40,7 +40,7 @@
     "file-loader": "^1.1.11",
     "fs": "0.0.1-security",
     "glob": "^7.0.6",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-if-else": "^1.0.3",
     "gulp-imagemin": "^8.0.0",
     "html-webpack-plugin": "^5.5.1",
