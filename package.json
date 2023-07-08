@@ -44,7 +44,7 @@
     "gulp-if-else": "^1.0.3",
     "gulp-imagemin": "^8.0.0",
     "html-webpack-plugin": "^5.5.1",
-    "node-sass": "^4.9.0",
+    "node-sass": "^9.0.0",
     "normalize.css": "^8.0.0",
     "postcss-loader": "^2.0.9",
     "sass-loader": "^7.0.1",
